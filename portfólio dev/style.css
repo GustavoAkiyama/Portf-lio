@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.toggle-container {
+text-align: right;
+}
+.toggle-switch {
+    opacity: 0; 
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 40px; 
+    height: 20px; 
+    background-color: #ccc; 
+    border-radius: 20px; 
+    cursor: pointer;
+    padding: 2px; 
+}
+
+.toggle-label i {
+    font-size: 12px; 
+}
+
+.toggle-label:before {
+    content: '';
+    position: absolute;
+    top: 2px; 
+    left: 2px; 
+    width: 16px; 
+    height: 16px; 
+    border-radius: 50%; 
+    background-color: #fff;
+    transition: transform 0.3s ease; 
+}
+
+.toggle-switch:checked + .toggle-label:before {
+    transform: translateX(20px); 
+}
+
+.theme-label {
+    vertical-align: middle; 
+}
+/* modo dark-mode.css*/ 
+
+html[data-theme="dark"] {
+    background-color: #121212;
+    color: lightgrey;
+}
+
+
+nav a {
+    color: lightgrey;
+    margin-left: 100px;
+}
+
+html {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: black;
+    line-height: 1.4;}
+
+html[data-theme="dark"] {
+    --background-header: #121212;
+    --color-header: lightgrey;
+    --background-footer: #121212;
+    --color-footer: lightgrey;
+    --background-main: #121212;
+    --color-main: lightgrey;}
+
+  html[data-theme="light"] {
+      background-color: white;
+    --color-header: lightgrey;
+    --background-footer: #121212;
+    --color-footer: lightgrey;
+    --background-main: #121212;
+    --color-main: lightgrey;}
+  
+ header{
+background-color: lightblue;
+color: black;
+text-align: center;}
+
+.second {
+text-align: center;
+font-size: 35px;}
+
+#hprojeto {
+    text-align: center;}
+
+header h1 {
+    margin-bottom: 10px;}
+nav a {
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+    font-size: 30px;
+}
+.Navbar {
+    display: flex;
+    justify-content: center; /* Adicionado para centralizar os itens */
+    padding: 16px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+
+  .Navbar__Link {
+    transition: color 0.3s ease;
+    text-align: center;
+  margin-right: 20px;
+    font-size: 30px;
+  }
+  .Navbar__Items {
+    display: flex;
+    /* margin-left: 50px; */ /* Removido para alinhar os itens corretamente */
+}
+
+  .Navbar__Link-toggle {
+display: none;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .Navbar__Items {
+      flex-direction: column;
+      line-height: 30px;
+    }
+    .Navbar{
+        flex-direction: column;
+    }
+      
+  .Navbar__Items {
+      display:none;
+    }
+      
+  .Navbar__Items--right {
+      margin-left:0;
+    }
+      
+  .Navbar__ToggleShow {
+      display: flex;
+    }
+      
+  .Navbar__Link-toggle {
+      align-self: flex-end;
+      display: initial;
+      position: absolute;
+      cursor: pointer;
+     } 
+  }
+.wrapper-skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    height: 150px;
+}
+
+.skill {
+    margin: 0 10px;
+    text-align: center;
+}
+
+#html {
+    font-size: 50px;
+    color: orangered;
+}
+
+#css {
+    font-size: 50px;
+    color: blue;
+}
+
+#java {
+    font-size: 50px;
+    color: yellow;
+}
+
+#pyt {
+    font-size: 50px;
+}
+
+.skill p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.progressbar {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    border: 5px solid #000;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.progressbar::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.progressbar::-webkit-progress-value {
+    background-color: blue;
+    border-radius: 5px;
+}
+#brhome {
+    margin-top: 120px;
+}
+
+#brhome2 {
+    margin-top: 160px;
+}
+
+#hhome {
+    color: rebeccapurple;
+    text-align: center;
+}
+
+#phome {
+    text-align: center;
+    font-size: 22px;
+    line-height: 50px;
+}
+
+.container {
+   text-align: center;
+}
+
+img {
+    max-width: 50%;
+}
+#brprojetos {
+    margin-top: 80px;
+}
+.ipro{
+max-width: fit-content;
+}
+
+#hprojetos,
+#hprojetos2,
+#hprojetos3,
+#hprojetos4 {
+    color: white;
+}
+
+#hprojetos2 {
+    font-size: 18px;
+}
+
+/* Sobre */
+#brsobre {
+    margin-top: 50px;
+}
+.sobre,
+.sobre2,
+.sobre3,
+.sobre4,
+.sobre5,
+.sobre6 {
+    text-align: center;
+    font-family: Helvetica;
+    display: flex;
+    margin-top: 20px;
+    line-height: 40px;
+    word-spacing: 5px;
+    font-size: 22px;
+    justify-content: center;
+}
+
+#hsobre,
+#hsobre2 {
+    line-height: 50px;
+    text-align: center;
+}
+
+/* Contato */
+#brcontato {
+    margin-top: 80px;
+}
+#br2contato{
+margin-top: 50px;
+}
+
+
+#hcontato {
+    text-align: center;
+}
+
+#whats{
+margin-left: 550px;
+ margin-right: 10px;  
+    font-size:60px;
+     text-decoration: none;
+   color: green;}
+#insta{
+font-size: 60px;
+text-decoration: none;
+color:red}
+#linke{
+    margin-left: 10px;
+   font-size: 60px;
+   text-decoration: none;
+   color:blue
+
+}
+
+#brprojetos {
+    margin-top: 80px;
+}
+.brpro{
+margin-top: 100px;
+
+}
+
+#hprojetos,
+#hprojetos2,
+#hprojetos3,
+#hprojetos4 {
+    color: white;
+}
+#hprojetos2 {
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 24px;
+        margin-bottom: 5px;}
+    nav a {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    .wrapper-skills {
+        margin-top: 10px;
+    }
+
+    .skill {
+        margin: 0 5px;
+    }
+
+    .progressbar {
+        height: 30px;
+    }
+    #whats{
+        margin-left: 10px;
+    }
+    #brhome,
+    #brsobre,
+    #brcontato,
+    #brprojetos {
+        margin-top: 58px;
+    }
+    #dev {
+        margin-left: 0;
+    }
+}
+#hall{
+text-align: center;
+}
+#flex{
+text-align: center;
+}
+
+#selfie {
+
+    margin-left: 20px;
+    width: 100%; 
+    max-width: 300px; }
+.texto {
+    overflow: hidden; 
+}
+
+
+.imageself {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto {
+    max-width: 600px; 
+}
+
+@media (min-width: 768px) { 
+    .imageself {
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: flex-start; 
+    }
+
+    .texto {
+        margin-left: 20px; 
+        max-width: none; 
+    }
+
+    #selfie {
+        max-width: 300px; 
+    }
+}

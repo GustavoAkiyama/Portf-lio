@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br"data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
+
+    .card {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: purple;
+   
+    }
+
+    .card h2 {
+        margin-top: 0;
+        font-size: 24px;
+    }
+
+    .card p {
+        margin-bottom: 0;
+        font-size: 16px;
+        color: white;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+</style>
+<body>
+    <header>
+        <h1>Seja bem vindo!</h1>
+        <div class="Navbar">
+            <div class="Navbar__Link Navbar__Link-toggle">
+              <i class="fas fa-bars"></i>
+            </div>
+          <nav class="Navbar__Items">
+            <div class="Navbar__Link">
+               <a href="home.html">Home</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="contato.html">Contato</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="projetos.html">Projetos</a>
+            </div> 
+        </nav>
+     </header>
+     <div class="toggle-container">
+        <input type="checkbox" id="toggle-dark" class="toggle-switch">
+        <label for="toggle-dark" class="toggle-label">
+            <i class="fas fa-sun"></i> 
+            <i class="fas fa-moon"></i> 
+        </label>
+    </div>
+      <main></main>
+<p id="brprojetos"></p>
+
+<div class="card-container">
+    <div class="card">
+       <h2 id="hprojetos">Projeto autopeça</h2> 
+        <a href="https://drive.google.com/drive/folders/1iHjBVGJd1XTsq6F-aOOkbWOtBfz3FXSv?usp=drive_link" target="_blank"> <img src="projeto.PNG" alt="Imagem do Card" class="ipro"></a>
+        <p>Este projeto foi um site de autopeças com funções de cadastro,login e também  usando o banco de dados </p>
+    </div>
+    <div class="card">
+        <h2 id="hprojetos2"> Projeto de estrutura</h2>
+     <img src="projeto3.PNG" alt="Imagem do Card" class="ipro"></a>
+        <p class="brpro">Projeto em andamento...</p>
+    </div>
+    <div class="card">
+    <h2 id="hprojetos3" >Projeto de sistemas</h2>
+     <img src="projeto2.PNG" alt="Imagem do Card" class="ipro"></a>
+<p class="brpro"> Projeto em andamento...</p>
+    </div>
+    <script>
+        const changeThemeToDark = () => {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("data-theme", "dark");
+        }
+
+        const changeThemeToLight = () => {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("data-theme", "light");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = localStorage.getItem('data-theme');
+            if (theme === 'dark') {
+                changeThemeToDark();
+                document.getElementById('toggle-dark').checked = true;
+            } else {
+                changeThemeToLight();
+            }
+        });
+
+        const botaoDark = document.getElementById('toggle-dark');
+        botaoDark.addEventListener('change', () => {
+            if (botaoDark.checked) {
+                changeThemeToDark();
+            } else {
+                changeThemeToLight();
+            }
+        });
+    </script>
+       <script>
+        function classToggle() {
+            const navs = document.querySelectorAll('.Navbar__Items')
+            
+            navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+          }
+          
+          document.querySelector('.Navbar__Link-toggle')
+            .addEventListener('click', classToggle);
+            </script>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br"data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Seja bem vindo!</h1>
+        <div class="Navbar">
+            <div class="Navbar__Link Navbar__Link-toggle">
+              <i class="fas fa-bars"></i>
+            </div>
+          <nav class="Navbar__Items">
+            <div class="Navbar__Link">
+               <a href="home.html">Home</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="contato.html">Contato</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="projetos.html">Projetos</a>
+            </div> 
+        </nav>
+     </header>
+     <div class="toggle-container">
+        <input type="checkbox" id="toggle-dark" class="toggle-switch">
+        <label for="toggle-dark" class="toggle-label">
+            <i class="fas fa-sun"></i> 
+            <i class="fas fa-moon"></i> 
+        </label>
+    </div>
+      <main></main>
+    <p id="brsobre"></p>
+    <div class="imageself">
+        <img id="selfie" src="foto.jpg" alt="">
+        <div class="texto">
+            <p id="brsobre2"></p>
+            <h1 id="hsobre">Olá, nesta página você estará entendendo</h1>
+            <h1 id="hsobre2">um pouco mais sobre mim</h1>
+    
+            <p class="sobre">Eu sou um estudante de análise e desenvolvimento de sistemas, tenho 18 anos além da faculdade estou fazendo diversos cursos para que eu possa aprender e aprimorar cada vez mais, estou fazendo estágio na própria faculdade para adquirir experiência conhecimento, aprendizagem e entender como as coisas funcionam.</p>
+    
+            <p class="sobre5">Em questão de idioma, tenho inglês avançado mesmo não ter feito nenhum curso ou algo do tipo.</p>
+            <p class="sobre6">Pois desde criança tive contato direto com o inglês, então foi um progresso mais "natural" de certa forma.</p>
+        </div>
+    </div>
+    
+    <script>
+        const changeThemeToDark = () => {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("data-theme", "dark");
+        }
+
+        const changeThemeToLight = () => {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("data-theme", "light");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = localStorage.getItem('data-theme');
+            if (theme === 'dark') {
+                changeThemeToDark();
+                document.getElementById('toggle-dark').checked = true;
+            } else {
+                changeThemeToLight();
+            }
+        });
+
+        const botaoDark = document.getElementById('toggle-dark');
+        botaoDark.addEventListener('change', () => {
+            if (botaoDark.checked) {
+                changeThemeToDark();
+            } else {
+                changeThemeToLight();
+            }
+        });
+    </script>
+      <script>
+        function classToggle() {
+            const navs = document.querySelectorAll('.Navbar__Items')
+            
+            navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+          }
+          
+          document.querySelector('.Navbar__Link-toggle')
+            .addEventListener('click', classToggle);
+            </script>
+</body>
+</html>

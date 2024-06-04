@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<body>
+    <header>
+        <h1>Seja bem vindo!</h1>
+        <div class="Navbar">
+            <div class="Navbar__Link Navbar__Link-toggle">
+              <i class="fas fa-bars"></i>
+            </div>
+          <nav class="Navbar__Items">
+            <div class="Navbar__Link">
+               <a href="home.html">Home</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="sobre.html">Sobre</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="contato.html">Contato</a>
+            </div>
+            <div class="Navbar__Link">
+               <a href="projetos.html">Projetos</a>
+            </div> 
+        </nav>
+     </header>
+     <div class="toggle-container">
+        <input type="checkbox" id="toggle-dark" class="toggle-switch">
+        <label for="toggle-dark" class="toggle-label">
+            <i class="fas fa-sun"></i> 
+            <i class="fas fa-moon"></i> 
+        </label>
+    </div>
+      <main></main>
+<p id="brcontato">   </p>
+<h1 id="hcontato">
+    Entre em contato comigo atráves desses contatos
+</h1>
+<br>
+<a href="https://wa.me/5511913513625" target="_blank" i class="fa-brands fa-whatsapp" id="whats"></i></a>
+<a href="https://www.instagram.com/gustavo_akiyama?igsh=Z2hxbGJ0OTl4YmN1" target="_blank" i class="fa-brands fa-instagram" id="insta"></i></a>
+<a href="https://www.linkedin.com/in/gustavo-akiyama-b26bb0276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+target="_blank" i class="fa-brands fa-linkedin" id="linke"></i></a>
+<script>
+    const changeThemeToDark = () => {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("data-theme", "dark");
+    }
+
+    const changeThemeToLight = () => {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("data-theme", "light");
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const theme = localStorage.getItem('data-theme');
+        if (theme === 'dark') {
+            changeThemeToDark();
+            document.getElementById('toggle-dark').checked = true;
+        } else {
+            changeThemeToLight();
+        }
+    });
+
+    const botaoDark = document.getElementById('toggle-dark');
+    botaoDark.addEventListener('change', () => {
+        if (botaoDark.checked) {
+            changeThemeToDark();
+        } else {
+            changeThemeToLight();
+        }
+    });
+</script>
+<script>
+    function classToggle() {
+        const navs = document.querySelectorAll('.Navbar__Items')
+        
+        navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+      }
+      
+      document.querySelector('.Navbar__Link-toggle')
+        .addEventListener('click', classToggle);
+        </script>
+</body>
+</html>
