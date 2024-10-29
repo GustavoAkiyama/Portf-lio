@@ -1,0 +1,96 @@
+/*================================*/
+/* - MAIOR QUE 768px (Desktops) - */
+/*================================*/
+
+@media (max-width:768px ) {
+    #myrange{
+        width: 150px;
+    }
+
+    .estacao-tab{
+        font-size: 40px;
+        margin-left: 5px;
+
+    }
+    
+    .heading-container-wrapper{
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+.filters{
+    font-size: 25px;
+max-height: 400px;
+}
+
+.heading-primaria{
+font-size:35px;
+}
+
+.dropdown {
+    display: block; /* Exibe apenas em telas menores */
+}
+
+.dropdown-content {
+    display: none; /* Oculta o conteúdo por padrão */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Exibe ao passar o mouse */
+}
+
+
+     .section--cursos{
+    margin-top: -100px;
+
+     }
+
+    .estacoes-lista {
+         scrollbar-width: none;
+     }
+ 
+     .estacao-link {
+         font-size: 1.4rem;
+     }
+ 
+ 
+     /* cta */
+     .cta .btn--cta {
+         justify-self: center;
+         padding: 1rem 4.4rem
+     }
+ 
+ 
+ }
+
+ /*=================================*/
+ /* - MAIOR QUE 1024px (Desktops) - */
+ /*=================================*/
+ 
+ @media (min-width: 64em) {
+ 
+   .estacoes-lista-wrapper {
+     margin : 0 auto;
+     max-width: 130rem;
+   }
+ 
+   .cursos-lista {
+ 
+     grid-template-columns: auto;
+     justify-items: start;
+     column-gap: 2.8rem;
+     overflow-x: scroll;
+     scrollbar-width: none;
+ }
+ 
+ .cta .heading-secundaria {
+ 
+     max-width: 85%;
+ }
+ 
+}
+ 

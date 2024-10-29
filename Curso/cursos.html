@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cursos.css">
+    <link rel="stylesheet" href="estacoesqueries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Cursos</title>
+</head>
+<body>
+    <section class="section--main">
+        <div class="container">
+            <div class="content">
+                <section class="section--cursos">
+                    <div class="cursos-box">
+                        <div class="heading-container-wrapper">
+                            <div class="container heading-container"> 
+                                <h1 class="heading-primaria">Cursos</h1>
+                            </div>
+                        </div>
+
+                        <div class="estacoes-lista-wrapper">
+                            <ul class="estacoes-lista">
+                                <a class="estacao-link estacao-link-active" href="{% url 'estacoes:cursos' %}">
+                                    <li class="estacao-tab">Todos</li>
+                                </a>
+                                {% for estacao_tag in estacoes %}
+                                <a class="estacao-link" href="{% url 'estacoes:curso' estacao_nome=estacao_tag.nome %}" data-id="{{ estacao_tag.nome }}">
+                                    <li class="estacao-tab" id="estacao-tab-{{ estacao_tag.nome }}">{{ estacao_tag.nome }}</li> 
+                                </a>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="estacao container" id="{{ curso.nome }}-box">
+                            <div class="lista">
+                                <div class="container-layout">
+                                    <aside class="filters">
+                                        <div class="search-box">
+                                            <input type="text" placeholder="Pesquisar...">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                        <div class="filter-options">
+                                            <h3 class="topcs">Duração</h3>
+                                            <p>De 1 à <span id="value"></span> meses</p>
+                                            <div class="barra">
+                                                <input type="range" min="2" max="12" value="7" id="myrange">
+                                            </div>
+
+                                            <div class="modalidade" onclick="toggleDropdown('modalidade-dropdown-1')">
+                                                <span class="modalidadebtn">Modalidade</span>
+                                                <i id="seta" class="fa-solid fa-chevron-down"></i>
+                                            </div>
+                                            <div class="dropdown-content" id="modalidade-dropdown-1">
+                                                <div class="curso">EAD</div>
+                                                <div class="curso">Presencial</div>
+                                            </div>
+
+                                            <div class="modalidade" onclick="toggleDropdown('modalidade-dropdown-2')">
+                                                <span class="modalidadebtn">Categorias</span>
+                                                <i id="seta" class="fa-solid fa-chevron-down"></i>
+                                            </div>
+                                            <div class="dropdown-content" id="modalidade-dropdown-2">
+                                                <div class="curso">TI e Software</div>
+                                                <div class="curso">Marketing</div>
+                                                <div class="curso">Design</div>
+                                                <div class="curso">Desenvolvimento</div>
+                                                <div class="curso">Inglês</div>
+                                                <div class="curso">Administração</div>
+                                                <div class="curso">Direito</div>
+                                            </div>
+                                        </div>
+                                    </aside>
+
+                                    <div class="cursos-lista">
+                                        <div class="card">
+                                            <img class="img-card" src="security.jpg" alt="">
+                                            <h3 class="card-titulo">{{ curso.nome }}</h3>
+                                            <p>{{ curso.descricao }}</p>
+                                        </div>
+                                        <!-- Repita os cards conforme necessário -->
+                                        <div class="card">
+                                            <img class="img-card" src="security.jpg" alt="">
+                                            <h3 class="card-titulo">{{ curso.nome }}</h3>
+                                            <p>{{ curso.descricao }}</p>
+                                        </div>
+                                        <div class="card">
+                                            <img class="img-card" src="security.jpg" alt="">
+                                            <h3 class="card-titulo">{{ curso.nome }}</h3>
+                                            <p>{{ curso.descricao }}</p>
+                                        </div>
+                                        <div class="card">
+                                            <img class="img-card" src="security.jpg" alt="">
+                                            <h3 class="card-titulo">{{ curso.nome }}</h3>
+                                            <p>{{ curso.descricao }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section--cta">
+                    <div class="cta container">  
+                        <div class="heading-container">
+                            <h2 class="heading-secundaria">Conheça nossas estações e o que temos desenvolvido</h2>
+                        </div>
+                        <img class="cta-img" src="{% static 'imgs/ilustration-cta.png' %}"/>
+                        <a class="btn btn--cta" href="{% url 'sobre' %}">Explorar</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <script defer src="cursos.js"></script>
+</body>
+</html>
